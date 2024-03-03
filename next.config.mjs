@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+// all configuration of nextx.js should be configure here 
+const nextConfig = {
+
+};
 
 export default nextConfig;
