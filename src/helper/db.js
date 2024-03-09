@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-// import { User } from "@/app/models/user";
 dotenv.config();
 
 const dbURL = process.env.DATABASE_URI;
@@ -18,12 +17,9 @@ export const connectDB = async () => {
         //     email: "abc@gmail.com",
         //     password: "93104@Aak",
         //     about: "Hello I am Aakash",
-        //     address: "Raj Nagar Extension , Ghaziabad"
         // })
 
         // await user.save()
-
-        // console.log("User is Created ------- Successfully ");
     }
     catch (error) {
         console.log(`Error in MongoDB is ${error}`);

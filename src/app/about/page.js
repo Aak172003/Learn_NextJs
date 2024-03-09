@@ -5,14 +5,11 @@
 //     })
 // }
 
-
 async function ManualError() {
     await new Promise((resolve) => {
         setTimeout(resolve, 3000)
-
     })
 }
-
 
 export default async function about() {
     // await takeTime()
