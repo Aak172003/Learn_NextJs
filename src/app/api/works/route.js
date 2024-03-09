@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 export function GET(request) {
-    console.log("GetWorks Api Called");
     return NextResponse.json(
         {
             message: "Works Api Called"
