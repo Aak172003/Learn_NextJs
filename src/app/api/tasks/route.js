@@ -27,11 +27,12 @@ export async function GET(request) {
 // Create Task
 export async function POST(request) {
 
-    const { title, content, userId } = await request.json()
+    const { title, content, userId, status } = await request.json()
     try {
         const task = new Task({
             title,
             content,
+            status,
             userId,
         })
         // Save the created task
