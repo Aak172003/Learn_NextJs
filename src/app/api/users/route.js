@@ -2,6 +2,8 @@
 import { NextResponse } from "next/server"
 import { connectDB } from "@/helper/db";
 import { User } from "@/app/models/user";
+import { comparePassword, hashPassword } from "@/helper/authHelper";
+import { getResponseMessage } from "@/helper/ApiResponse";
 
 
 connectDB()
@@ -72,13 +74,17 @@ export async function POST(request) {
         })
     }
     try {
+
+        const encryptedPass = await hashPassword(password)
+
         const user = new User({
             name,
             email,
-            password,
+            password: encryptedPass,
             about,
             profileURL
         })
+
         await user.save()
         return NextResponse.json({
             success: true,
@@ -94,3 +100,4 @@ export async function POST(request) {
         }, { status: 403, statusText: "Error while adding User" })
     }
 }
+
